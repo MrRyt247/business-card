@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+}
+
+body {
+  height: 100dvh;
+  background-color: gainsboro;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: white;
+  padding-left: 20px;
+  width: 80%;
+  min-width: 300px;
+  max-width: 600px;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 2fr 1fr;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.info {
+  grid-template-areas: "name-job description contacts";
+}
+
+.name-job {
+  grid-area: name-job;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+.description {
+  grid-area: description;
+}
+
+.contacts {
+  grid-area: contacts;
+}
+
+.portrait {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+img .card:hover {
+  object-fit: contain;
+}
+
+@media (max-width: 400px) {
+  .card {
+    grid-template-columns: 1fr;
+    grid-template-areas: "portrait info";
+    padding: 0;
+  }
+  
+  .info {
+    text-align: center;
+    padding: 5px;
+  }
+}
